@@ -18,44 +18,47 @@ function App() {
         Add
       </button>
       {numbers.map((elem, index) => {
-        console.log(elem);
-        return (
-          <>
-            <div className="counter">
+        if (index !== 3) {
+          return (
+            <>
+              <div className="counter">
+                <button
+                  onClick={() => {
+                    const newNumbers = [...numbers];
+                    newNumbers[index]--;
+                    setNumbers(newNumbers);
+                  }}
+                >
+                  -
+                </button>
+                <div>{elem}</div>
+              </div>
               <button
                 onClick={() => {
                   const newNumbers = [...numbers];
-                  newNumbers[index]--;
+                  newNumbers[index]++;
                   setNumbers(newNumbers);
                 }}
               >
-                -
+                +
               </button>
-              <div>{elem}</div>
-            </div>
-            <button
-              onClick={() => {
-                const newNumbers = [...numbers];
-                newNumbers[index]++;
-                setNumbers(newNumbers);
-              }}
-            >
-              +
-            </button>
-            <div className="reset-button">
-              <button
-                onClick={() => {
-                  const newNumbers = [...numbers];
-                  newNumbers[index] = 0;
-                  setNumbers(newNumbers);
-                }}
-                className="reset"
-              >
-                RESET
-              </button>
-            </div>
-          </>
-        );
+              <div className="reset-button">
+                <button
+                  onClick={() => {
+                    const newNumbers = [...numbers];
+                    newNumbers[index] = 0;
+                    setNumbers(newNumbers);
+                  }}
+                  className="reset"
+                >
+                  RESET
+                </button>
+              </div>
+            </>
+          );
+        } else {
+          alert`Max counter deployed`;
+        }
       })}
     </div>
   );
