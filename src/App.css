@@ -1,3 +1,25 @@
-.my-counter {
-  padding: 20px;
+button {
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 4px;
+}
+
+.mamama {
+  border: solid 3px red;
+  display: flex;
+  flex-direction: column;
+}
+
+.counters {
+  display: flex;
+}
+
+.new-counter {
+  font-size: 8px;
+  background-color: aqua;
+  border-radius: 5px;
 }
