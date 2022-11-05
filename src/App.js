@@ -46,8 +46,7 @@ function App() {
               </div>
             );
           } else {
-            <h1>0 / 3</h1>;
-            alert`Max counter deployed`;
+            return alert`Max counter reached`;
           }
         })}
       </div>
