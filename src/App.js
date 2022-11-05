@@ -20,7 +20,7 @@ function App() {
           new counter
         </button>
       </div>
-      <div className="mamama">
+      <div className="binding-counters">
         {numbers.map((elem, index) => {
           if (index < 3) {
             return (
@@ -37,7 +37,7 @@ function App() {
                       -
                     </button>
 
-                    <div>{elem}</div>
+                    <div className="result">{elem}</div>
                     <button
                       onClick={() => {
                         const newNumbers = [...numbers];
