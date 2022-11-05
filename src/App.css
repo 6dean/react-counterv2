@@ -1,3 +1,9 @@
+.counter-website {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 button {
   height: 30px;
   width: 80px;
@@ -8,13 +14,26 @@ p {
   font-size: 4px;
 }
 
+.reset-button {
+  display: flex;
+}
+
 .mamama {
   border: solid 3px red;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.master {
+  border: solid 4px greenyellow;
+  display: flex;
 }
 
 .counters {
+  border: solid 2px blue;
+}
+
+.counter {
   display: flex;
 }
 
@@ -22,4 +41,12 @@ p {
   font-size: 8px;
   background-color: aqua;
   border-radius: 5px;
+}
+
+.reset {
+  height: 20px;
+  width: 60px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(84, 97, 122);
 }

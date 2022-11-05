@@ -7,56 +7,61 @@ function App() {
 
   //
   return (
-    <div className="v2">
+    <div className="counter-website">
+      <div>
+        <button
+          className="new-counter"
+          onClick={() => {
+            const newNumbers = [...numbers];
+            newNumbers.push(0);
+            setNumbers(newNumbers);
+          }}
+        >
+          new counter
+        </button>
+      </div>
       <div className="mamama">
-        <div className="papapa">
-          <button
-            className="new-counter"
-            onClick={() => {
-              const newNumbers = [...numbers];
-              newNumbers.push(0);
-              setNumbers(newNumbers);
-            }}
-          >
-            new counter
-          </button>
-        </div>
         {numbers.map((elem, index) => {
           if (index < 3) {
             return (
-              <div className="counters">
-                <div className="counter">
-                  <button
-                    onClick={() => {
-                      const newNumbers = [...numbers];
-                      newNumbers[index]--;
-                      setNumbers(newNumbers);
-                    }}
-                  >
-                    -
-                  </button>
-                </div>
-                <div>{elem}</div>
-                <button
-                  onClick={() => {
-                    const newNumbers = [...numbers];
-                    newNumbers[index]++;
-                    setNumbers(newNumbers);
-                  }}
-                >
-                  +
-                </button>
-                <div className="reset-button">
-                  <button
-                    onClick={() => {
-                      const newNumbers = [...numbers];
-                      newNumbers[index] = 0;
-                      setNumbers(newNumbers);
-                    }}
-                    className="reset"
-                  >
-                    RESET
-                  </button>
+              <div className="master">
+                <div className="counters">
+                  <div className="counter">
+                    <button
+                      onClick={() => {
+                        const newNumbers = [...numbers];
+                        newNumbers[index]--;
+                        setNumbers(newNumbers);
+                      }}
+                    >
+                      -
+                    </button>
+
+                    <div>{elem}</div>
+                    <button
+                      onClick={() => {
+                        const newNumbers = [...numbers];
+                        newNumbers[index]++;
+                        setNumbers(newNumbers);
+                      }}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="reset-button">
+                    <div>
+                      <button
+                        onClick={() => {
+                          const newNumbers = [...numbers];
+                          newNumbers[index] = 0;
+                          setNumbers(newNumbers);
+                        }}
+                        className="reset"
+                      >
+                        RESET
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
