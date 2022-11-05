@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-// import Counter from "./components/Counter";
+import Counter from "./components/Counter";
 
 function App() {
   const minNumbers = [0];
@@ -21,7 +21,6 @@ function App() {
             const newNumbers = [...numbers];
             newNumbers.push(0);
             setNumbers(newNumbers);
-            console.log(numbers, newNumbers);
           }}
         >
           <div>
@@ -32,51 +31,18 @@ function App() {
           </div>
         </button>
       </div>
+
       <div className="binding">
         {numbers.map((elem, index) => {
           if (index < 3) {
             return (
               <div className="master">
-                <div className="counters">
-                  <div className="counter">
-                    <button
-                      className="sus-add-button"
-                      onClick={() => {
-                        const newNumbers = [...numbers];
-                        newNumbers[index]--;
-                        setNumbers(newNumbers);
-                      }}
-                    >
-                      <div className="sizing"> -</div>
-                    </button>
-
-                    <div className="result">{elem}</div>
-                    <button
-                      className="sus-add-button"
-                      onClick={() => {
-                        const newNumbers = [...numbers];
-                        newNumbers[index]++;
-                        setNumbers(newNumbers);
-                      }}
-                    >
-                      <div className="sizing"> +</div>
-                    </button>
-                  </div>
-                  <div className="reset-button">
-                    <div>
-                      <button
-                        onClick={() => {
-                          const newNumbers = [...numbers];
-                          newNumbers[index] = 0;
-                          setNumbers(newNumbers);
-                        }}
-                        className="reset"
-                      >
-                        RESET
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <Counter
+                  numbers={numbers}
+                  setNumbers={setNumbers}
+                  index={index}
+                  elem={elem}
+                />
               </div>
             );
           } else {
