@@ -45,8 +45,8 @@ function App() {
                 />
               </div>
             );
-          } else {
-            return alert`Max counter reached`;
+          } else if (index > 3) {
+            return alert`Max counters reached`;
           }
         })}
       </div>
